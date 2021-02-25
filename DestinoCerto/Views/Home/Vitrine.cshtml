@@ -1,0 +1,37 @@
+﻿ @model IEnumerable<Pacote>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+ <section>
+     <div class="vitrine">
+         <div class="tema">
+<p><h5>Nossos Pacotes Turísticos</h5></p>
+</div>
+<table>
+    <thead>
+        <tr>
+            <strong><th>Nome</th>
+            <th>Destino</th>
+            <th>Origem</th>
+            <th>Atrativos</th>
+            <th>Saída</th>
+            <th>Retorno</th></strong>
+        <tr>
+    </thead>
+    <tbody>
+        @foreach (Pacote p in Model)
+        {
+            <tr>               
+                <td>@p.Nome</td>
+                <td>@p.Destino</td>
+                <td>@p.Origem</td>
+                <td>@p.Atrativos</td>
+                <td>@p.Saida.ToString("dd/MM/yyyy")</td>
+                <td>@p.Retorno.ToString("dd/MM/yyyy")</td>  
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+</section>

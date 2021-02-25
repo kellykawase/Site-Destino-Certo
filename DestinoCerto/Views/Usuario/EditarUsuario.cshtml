@@ -1,0 +1,35 @@
+@using DestinoCerto.Models
+@model Usuario
+@{
+    ViewData["Title"] = "EditarUsuario";
+}
+<section class="formulario">
+   <form method="POST" asp-action="EditarUsuario">
+       <input type="hidden" asp-for="Id">
+	<fieldset>
+		<legend> <h5>Usuários</h5></legend>
+		<div class="clear">
+			<div class="column-3 column label"><label asp-for="Nome">Nome: </label></div>
+			<div class="column-9 column input"><input asp-for="Nome" type="text"   maxlength="90" autocomplete="off" required autofocus /></div></div>	
+			<div class="clear">
+
+			<div class="column-3 column label"><label asp-for="Login">Login: </label></div>
+			<div class="column-9 column input"><input asp-for="Login" type="text"   maxlength="90" autocomplete="off" required autofocus /></div></div>	
+			<div class="clear">      
+
+			<div class="column-3 column label"><label asp-for="Senha">Senha: </label></div>
+			<div class="column-9 column input"><input asp-for="Senha" type="password" maxlength="90" autocomplete="off" required autofocus /></div></div>	
+			<div class="clear">                        
+
+			<div class="column-3 column label"><label asp-for="DataNascimento">Data de Nascimento: </label></div>
+			<div class="column-9 column input"><input asp-for="DataNascimento" type="date"   maxlength="90" autocomplete="off" required autofocus /></div></div>	
+			<div class="clear">  
+
+    		<p><input type="submit" name="Editar" /></p>
+    	</fieldset>	
+</form>
+</section>   
+<p>
+    @ViewBag.Mensagem
+	<a href="/Usuario/ListaUsuario">Lista de Usuários</a>
+</p>

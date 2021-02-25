@@ -1,0 +1,46 @@
+@using DestinoCerto.Models
+@model Pacote
+@{
+    ViewData["Title"] = "CadastroPacote";
+}
+
+<section class="formulario">
+   <form method="POST" asp-action="CadastroPacote">
+	<fieldset>
+		<legend> <h5>Cadastro de Novos Pacotes Turísticos</h5></legend>
+		<div class="clear">
+
+        <div class="column-3 column label"><label asp-for="Nome">Nome: </label></div>
+			<div class="column-9 column input"><input asp-for="Nome" type="text" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+        <div class="column-3 column label"><label asp-for="Destino">Destino: </label></div>
+			<div class="column-9 column input"><input asp-for="Destino" type="text" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+        <div class="column-3 column label"><label asp-for="Origem">Origem: </label></div>
+			<div class="column-9 column input"><input asp-for="Origem" type="text" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+             <div class="column-3 column label"><label asp-for="Atrativos">Atrativos: </label></div>
+			<div class="column-9 column input"><input asp-for="Atrativos" type="text" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+        <div class="column-3 column label"><label asp-for="Saida">Saida: </label></div>
+			<div class="column-9 column input"><input asp-for="Saida" type="date" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+             <div class="column-3 column label"><label asp-for="Retorno">Retorno: </label></div>
+			<div class="column-9 column input"><input asp-for="Retorno" type="date" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+
+             <div class="column-3 column label"><label asp-for="Usuario">Usuario: </label></div>
+			<div class="column-9 column input"><input asp-for="Usuario" maxlength="90" autocomplete="off" required autofocus /></div></div>
+    		<p><input type="submit" name="Cadastrar" /></p>            
+    	</fieldset>	
+</form>
+</section>
+
+<p>
+    @ViewBag.Mensagem
+</p>

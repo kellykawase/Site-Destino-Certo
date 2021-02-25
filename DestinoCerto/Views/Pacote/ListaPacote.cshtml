@@ -1,0 +1,47 @@
+@using DestinoCerto.Models
+@model IEnumerable<Pacote>
+@{
+    ViewData["Title"] = "ListaPacote";
+}
+<section>
+<div class="lista">
+<div class="titulo"><h5>Lista de Pacotes</h5></div>
+<table>
+    <thead>
+        <tr>
+            <th>IdP</th>
+            <th>Nome</th>
+            <th>Destino</th>
+            <th>Origem</th>
+            <th>Atrativos</th>
+            <th>Saída</th>
+            <th>Retorno</th>  
+            <th>Usuario</th>          
+            <th>Ações</th>
+        </tr>
+    </thead>
+        @foreach (Pacote p in Model)
+        {
+            <tr>
+                <td>@p.IdP</td>
+                <td>@p.Nome</td>
+                <td>@p.Destino</td>
+                <td>@p.Origem</td>
+                <td>@p.Atrativos</td>
+                <td>@p.Saida.ToString("dd/MM/yyyy")</td>
+                <td>@p.Retorno.ToString("dd/MM/yyyy")</td>
+                <td>@p.Usuario</td>
+                <td>
+                    <a href="/Pacote/EditarPacote?IdP=@p.IdP">Editar</a>
+                    <a href="/Pacote/RemoverPacote?IdP=@p.IdP">Remover</a>
+                </td>
+            </tr>
+        }
+        </div>
+    <tbody>
+
+    </tbody>
+</table>
+<p><a href="/Pacote/CadastroPacote">Cadastrar Pacotes Turísticos</p>
+
+<section>

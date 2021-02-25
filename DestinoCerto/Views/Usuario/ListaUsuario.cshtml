@@ -1,0 +1,43 @@
+@using DestinoCerto.Models
+@model IEnumerable<Usuario>
+@{
+    ViewData["Title"] = "ListaUsuario";
+}
+<section>
+<div class="lista">
+<div class="titulo"><h5>Lista de Usuários</h5></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Data de Nascimento</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+        @foreach (Usuario u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                <td>@u.Nome</td>
+                <td>@u.Login</td>
+                <td>@u.Senha</td>                
+                <td>@u.DataNascimento.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="/Usuario/EditarUsuario?Id=@u.Id">Editar</a>
+                    <a href="/Usuario/RemoverUsuario?Id=@u.Id">Remover</a>
+                </td>
+            </tr>  
+              
+        }
+        </div>
+    <tbody>
+        
+    </tbody>
+</table>
+<p><a href="/Usuario/CadastroUsuario">Cadastrar Usuário</a>
+<section>
+

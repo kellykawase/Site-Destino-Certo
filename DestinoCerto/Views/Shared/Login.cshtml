@@ -1,0 +1,24 @@
+@using DestinoCerto.Models
+@model Usuario
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="login">
+    <form method="POST" asp-action="Login">
+	<fieldset>
+		<legend><h5>Faça seu login:</h5></legend>
+		<div class="clear">
+			<div class="column-3 column label"><label asp-for="Login">Login: </label></div>
+			<div class="column-9 column input"><input asp-for="Login" type="text" maxlength="90" autocomplete="off" required autofocus /></div></div>
+         <div class="clear">
+            <div class="column-3 column label"><label asp-for="Senha">Senha: </label></div>
+			<div class="column-9 column input"><input asp-for="Senha" type="password" maxlength="90" autocomplete="off" required autofocus /></div></div>
+    		<p><input type="submit" name="Entrar" /></p>            
+    	</fieldset>	
+</form>
+<div class="mensagem">
+    @ViewBag.Mensagem
+</div>
+</section>
+
